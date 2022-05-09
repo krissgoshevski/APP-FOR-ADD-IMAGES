@@ -1,0 +1,8 @@
+.mat-select-trigger {
+    height: 500px;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: row;
+}

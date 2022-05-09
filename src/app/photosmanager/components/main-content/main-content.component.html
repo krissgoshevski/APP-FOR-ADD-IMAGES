@@ -1,0 +1,18 @@
+<div *ngIf="photo">
+    <button mat-raised-button color="primary" matLine routerLink="photosmanager" (click)="onBack()"><mat-icon>arrow_back_ios</mat-icon>Back</button>
+    <button mat-raised-button color="primary" (click)="openEditDialog(photo.id)"><mat-icon>edit</mat-icon>Edit photo</button>
+    <button mat-raised-button color="warn" (click)="openDeleteDialog(photo.id)"><mat-icon>delete</mat-icon>Delete photo</button>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ photo.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <img src="{{photo.url}}" width="600px" height="600px" />
+            <div class="wrapper">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+    </mat-card>
+</div>

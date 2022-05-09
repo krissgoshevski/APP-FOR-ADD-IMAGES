@@ -1,0 +1,23 @@
+.mat-raised-button {
+    margin: 10px;
+}
+
+.mat-card {
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .mat-card {
+        margin-top: 10px;
+    }
+    .mat-raised-button {
+        margin: 5px;
+    }
+    img {
+        width: 90%;
+        height: 90%;
+        position: relative;
+    }
+}

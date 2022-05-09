@@ -1,0 +1,24 @@
+<div class="app-sidenav-container">
+    <mat-sidenav *ngIf="isShown" #sidenav class="app-sidenav mat-elevation-z10" [opened]="true">
+        <mat-toolbar color="primary">
+            <span>Photos</span>
+            <span class="example-spacer"></span>
+            <button mat-button (click)="openAddPhotoDialog()">
+                <mat-icon>add</mat-icon>
+              </button>
+        </mat-toolbar>
+        <mat-card *ngFor="let photo of photos | async">
+            <mat-card-header>
+                <img src="{{photo.thumbnailUrl}}" />
+            </mat-card-header>
+            <mat-card-content><a>{{ photo.title }}</a>
+            </mat-card-content>
+            <button matLine [routerLink]="['/photosmanager', photo.id]" (click)="toggleShow()" mat-stroked-button color="primary"><mat-icon>details</mat-icon>Details</button>
+        </mat-card>
+    </mat-sidenav>
+    <div class="app-sidenav-content">
+        <div class="wrapper">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
